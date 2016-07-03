@@ -70,7 +70,6 @@ $(function () {
          * hiding/showing of the menu element.
          */
         it('is hidden by default', function () {
-            expect(body).toBeDefined();
             expect(body.hasClass('menu-hidden')).toBe(true);
         });
 
@@ -79,12 +78,9 @@ $(function () {
          * should have two expectations: does the menu display when
          * clicked and does it hide when clicked again.
          */
-        it('is visible after clicked', function () {
+        it('toggles visibility when clicked', function () {
             menuIcon.trigger('click');
             expect(body.hasClass('menu-hidden')).toBe(false);
-        });
-
-        it('is hidden after clicked again', function () {
             menuIcon.trigger('click');
             expect(body.hasClass('menu-hidden')).toBe(true);
         });
@@ -104,7 +100,9 @@ $(function () {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
         it('have at least one item after loading', function () {
-            var entries = $('.entry');
+            var feed = $('.feed');
+            var entries = feed.find('.entry');
+            console.log(entries);
             expect(entries.length).toBeGreaterThan(0);
         });
 
