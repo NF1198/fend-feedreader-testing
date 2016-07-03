@@ -79,10 +79,11 @@ $(function () {
          * clicked and does it hide when clicked again.
          */
         it('toggles visibility when clicked', function () {
+            var menuInitialState = body.hasClass('menu-hidden');
             menuIcon.trigger('click');
-            expect(body.hasClass('menu-hidden')).toBe(false);
+            expect(body.hasClass('menu-hidden')).toBe(!menuInitialState);
             menuIcon.trigger('click');
-            expect(body.hasClass('menu-hidden')).toBe(true);
+            expect(body.hasClass('menu-hidden')).toBe(menuInitialState);
         });
 
     });
