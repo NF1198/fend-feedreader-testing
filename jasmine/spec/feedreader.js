@@ -102,7 +102,6 @@ $(function () {
         it('have at least one item after loading', function () {
             var feed = $('.feed');
             var entries = feed.find('.entry');
-            console.log(entries);
             expect(entries.length).toBeGreaterThan(0);
         });
 
